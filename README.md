@@ -3,7 +3,8 @@
 ## Overview
 This project is based on creating a functioning user preferance random password generator using JavaScript. 
 
-
+![Alt text](<assets/Screenshot 2024-01-07 193924.png>)
+![Alt text](<assets/Screenshot 2024-01-07 194138.png>)
 
 ## Built with
 
