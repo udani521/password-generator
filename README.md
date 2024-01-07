@@ -6,6 +6,10 @@ This project is based on creating a functioning user preferance random password 
 ![Alt text](<assets/Screenshot 2024-01-07 193924.png>)
 ![Alt text](<assets/Screenshot 2024-01-07 194138.png>)
 
+## Deployed site
+
+ https://udani521.github.io/password-generator/
+
 ## Built with
 
 JavaScript 
