@@ -87,6 +87,7 @@ var upperCasedCharacters = [
   'Y',
   'Z'
 ];
+//series of prompts for password criteria (Length of password,At least 8 characters but no more than 128)
 
 
 function getPasswordOptions() {
@@ -94,17 +95,18 @@ function getPasswordOptions() {
   while (true) {
     length = parseInt(prompt("Enter the length of the password (between 8 and 128 characters)"));
     if (!isNaN(length) && length >= 8 && length <= 128) {
-      break; // Break out of the loop if a valid length is provided
+      break;  
     }
     alert("Please enter a valid length between 8 and 128 characters.");
   }
+//to get Character types,Lowercase, Uppercase, Numeric, Special characters ($@%&*, etc)
   var specialCharacters = confirm ("Include Special Characters?");
   var numericCharacters = confirm ("Include Numeric Characters?");
   var lowerCasedCharacters = confirm ("Include Lowercase Characters?");
   var upperCasedCharacters = confirm ("Include Uppercase Characters?");
 
   if (!specialCharacters && !numericCharacters && !lowerCasedCharacters && !upperCasedCharacters) {
-    alert("Please select at least one character type.");
+    alert("Please select at least one character type.");    //validate for each input and at least one character type should be selected
     return;
   }
   return {
@@ -121,7 +123,7 @@ function getPasswordOptions() {
 function generatePassword() {
   var options = getPasswordOptions();
   if (!options) {
-    return; // Exit the function if options are not selected
+    return; 
   }
 
   var characterSet = '';
@@ -137,7 +139,7 @@ function generatePassword() {
   if (options.specialCharacters) {
     characterSet += "@%+\\/'!#$^?:,)(}{][~-_.";
   }
-
+//get random password
   function generatePassword(length, characterSet) {
   var password = '';
   for (var i = 0; i < options.length; i++) {
@@ -146,9 +148,15 @@ function generatePassword() {
   }
   return password;
 }
+//print the generated password
 var password = generatePassword(length, characterSet);
   alert("Your Generated Password is: " + password);
-}
-
+  var passwordTextArea = document.getElementById('password');
+  passwordTextArea.value = password;
+ }
+ //Generate a password when the button is clicked
 const generate = document.getElementById('generate');
 generate.addEventListener('click', generatePassword);
+
+
+
